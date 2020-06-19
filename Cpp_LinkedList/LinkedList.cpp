@@ -6,8 +6,11 @@ LinkedList::LinkedList() {
 	this->tail = NULL;
 }
 LinkedList::~LinkedList() {
-	if (this->head != NULL) delete this->head;
-	if (this->tail != NULL) delete this->tail;
+	while (this->head != NULL) { 
+		Node* currentNode = this->head;
+		this->head = this->head->next;
+		delete currentNode;
+	}
 }
 int LinkedList::getSize() {
 	return this->size;
@@ -80,6 +83,7 @@ void LinkedList::deleteNode(int studentId) {
 				// delete in the middle
 				preNode->next = currentNode->next;
 			}
+			delete currentNode;
 			this->size--;
 			return;
 		}
