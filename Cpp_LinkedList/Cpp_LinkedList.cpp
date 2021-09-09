@@ -31,7 +31,7 @@ int main()
     }
 
     cout << endl << endl << "Sau khi xoa 1 node " << endl;
-    list->deleteNode(40);
+    list->deleteNode(30);
     list->printList();
 
     cout << endl << endl << endl;

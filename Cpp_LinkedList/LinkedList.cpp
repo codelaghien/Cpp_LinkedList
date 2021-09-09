@@ -9,6 +9,7 @@ LinkedList::~LinkedList() {
 	while (this->head != NULL) { 
 		Node* currentNode = this->head;
 		this->head = this->head->next;
+		currentNode->next = NULL;
 		delete currentNode;
 	}
 }
@@ -83,6 +84,7 @@ void LinkedList::deleteNode(int studentId) {
 				// delete in the middle
 				preNode->next = currentNode->next;
 			}
+			currentNode->next = NULL;
 			delete currentNode;
 			this->size--;
 			return;
